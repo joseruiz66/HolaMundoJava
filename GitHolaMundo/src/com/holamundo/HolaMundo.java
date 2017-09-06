@@ -4,7 +4,7 @@
 package com.holamundo;
 
 /**
- * @author JOSE-WIN8
+ * @author Ruiz José María
  *
  */
 public final class HolaMundo {
