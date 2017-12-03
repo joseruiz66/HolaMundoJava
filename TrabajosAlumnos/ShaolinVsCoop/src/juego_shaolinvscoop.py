@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 Created on 3 dic. 2017
-Trabajo Final: Programación de Videojuegos con Python 
+Trabajo Final: Programación de Videojuegos con Pilasengine
 @author: Chiarella, Martín - Vargas, Walter
 '''
 
