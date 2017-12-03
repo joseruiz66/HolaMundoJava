@@ -239,6 +239,7 @@ class EscenaPelea(pilasengine.escenas.Escena):
                 self.control = mando_coop
                 self.receptor.imagen = ("Cooperativista/coop_parado.png")
                 self.receptor.centro = ("centro", "abajo")
+            
             def actualizar(self):
                 if self.control.derecha or self.control.izquierda:
                     self.receptor.hacer_inmediatamente(CaminarCoop) #Camina si izq o der           
@@ -258,6 +259,7 @@ class EscenaPelea(pilasengine.escenas.Escena):
                 self.control = mando_coop
                 self.receptor.imagen = self.pilas.imagenes.cargar_grilla("Cooperativista/coop_caminando.png", 4)
                 self.receptor.centro = ("centro", "abajo")        
+            
             def actualizar(self):
                 self.receptor.imagen.avanzar(10) #Determina la velocidad de la animacion al moverse            
                 if self.control.derecha:
@@ -284,6 +286,7 @@ class EscenaPelea(pilasengine.escenas.Escena):
                 self.receptor.centro = ("centro", "abajo")
                 self.y_inicial = self.receptor.y
                 self.vy = 17 #Determina la altura del salto     
+            
             def actualizar(self):
                 self.receptor.y += self.vy
                 self.vy -= 0.7
@@ -312,6 +315,7 @@ class EscenaPelea(pilasengine.escenas.Escena):
                 self.receptor.imagen = self.pilas.imagenes.cargar_grilla("Cooperativista/coop_ataque.png", 2)
                 self.receptor.imagen.definir_cuadro(1) 
                 self.receptor.centro = ("centro", "abajo")
+            
             def actualizar(self):
                 self.receptor.imagen.avanzar(-50)
                 if self.receptor.imagen.avanzar() == False:
@@ -323,6 +327,7 @@ class EscenaPelea(pilasengine.escenas.Escena):
                 self.receptor = receptor         
                 self.receptor.imagen = self.pilas.imagenes.cargar_grilla("Cooperativista/coop_muerto.png", 2) 
                 self.receptor.centro = ("centro", "abajo")
+            
             def actualizar(self):
                 self.receptor.imagen.avanzar(-55)
                 if self.receptor.imagen.avanzar() == False:
@@ -362,6 +367,7 @@ class EscenaPelea(pilasengine.escenas.Escena):
                             angulo_de_movimiento=0,
                             gravedad=0)
                 self.aprender(pilasengine.habilidades.eliminarse_si_sale_de_pantalla)
+            
             def actualizar(self):
                 self.rotacion -= 100
                 if self.figura_de_colision.figuras_en_contacto:
@@ -383,6 +389,7 @@ class EscenaPelea(pilasengine.escenas.Escena):
                             angulo_de_movimiento=180,
                             gravedad=0)
                 self.aprender(pilasengine.habilidades.eliminarse_si_sale_de_pantalla)
+            
             def actualizar(self):
                 self.rotacion -= 10
                 if self.figura_de_colision.figuras_en_contacto:
