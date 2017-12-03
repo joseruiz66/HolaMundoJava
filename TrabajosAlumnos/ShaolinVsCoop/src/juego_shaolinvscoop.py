@@ -54,13 +54,15 @@ class EscenaSalir(pilasengine.escenas.Escena):
     def iniciar(self):
         self.pilas.fondos.Noche()
         self.texto = pilas.actores.Texto('Bye bye...')
-        pilas.tareas.agregar(2, self.cerrar)        
+        pilas.tareas.agregar(2, self.cerrar) 
+               
     def cerrar(self):
         pilas.terminar()
 
 class EscenaPelea(pilasengine.escenas.Escena):
     def regresar(self, evento):
         self.pilas.escenas.EscenaMenu()
+        
     def iniciar(self):
         pilas.fondos.Volley()
         pilas.eventos.pulsa_tecla_escape.conectar(self.regresar)
@@ -97,6 +99,7 @@ class EscenaPelea(pilasengine.escenas.Escena):
                 self.crear_figura_de_colision_rectangular(0, -80, 100, 150)
                 self.aprender(pilas.habilidades.LimitadoABordesDePantalla) #Evita que el personaje salga de la pantalla.
                 self.hacer_inmediatamente(ParadoShao)                       
+                
             def actualizar(self):
                 if self.figura_de_colision.figuras_en_contacto:
                     self.vida.progreso -= 10
@@ -108,6 +111,7 @@ class EscenaPelea(pilasengine.escenas.Escena):
                 self.control = mando_shao
                 self.receptor.imagen = self.pilas.imagenes.cargar_grilla("Shaolin/shao_parado.png", 4)
                 self.receptor.centro = ("centro", "abajo")
+                
             def actualizar(self):
                 self.receptor.imagen.avanzar(7) #Velocidad de la animacion al estar parado.
                 if self.control.derecha or self.control.izquierda:
