@@ -197,6 +197,7 @@ class EscenaPelea(pilasengine.escenas.Escena):
                 self.receptor.imagen = self.pilas.imagenes.cargar_grilla("Shaolin/shao_caida.png", 2) 
                 self.receptor.centro = ("centro", "abajo")
                 self.x = 0
+                
             def actualizar(self):
                 self.receptor.imagen.avanzar(-55)
                 if self.receptor.imagen.avanzar() == False:
@@ -225,7 +226,8 @@ class EscenaPelea(pilasengine.escenas.Escena):
                 self.y = y
                 self.crear_figura_de_colision_circular(50, x=0, y=-50)
                 self.aprender(pilas.habilidades.LimitadoABordesDePantalla) #Evita que el personaje salga de la pantalla
-                self.hacer_inmediatamente(ParadoCoop)       
+                self.hacer_inmediatamente(ParadoCoop)   
+                    
             def actualizar(self):
                 if self.figura_de_colision.figuras_en_contacto:
                     self.vida.progreso -= 10
