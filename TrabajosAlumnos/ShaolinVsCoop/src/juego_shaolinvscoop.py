@@ -20,16 +20,20 @@ class EscenaMenu(pilasengine.escenas.Escena):
         self.coop = pilas.actores.Actor(x=100, y=35)
         self.coop.imagen = ("Cooperativista/coop_parado.png")        
         self.menuInicial()
+        
     def menuInicial(self):
         self.menu = self.pilas.actores.Menu([
             ("Iniciar Juego", self.iniciarJuego), 
             ("Creditos", self.creditos),
             ("Salir", self.salir)
             ], y = -70)
+        
     def iniciarJuego(self): 
         self.pilas.escenas.EscenaPelea()
+    
     def creditos(self):
         self.pilas.escenas.EscenaCreditos()
+    
     def salir(self):
         self.pilas.escenas.EscenaSalir()         
 
